@@ -268,9 +268,9 @@ class SlackBot extends Adapter
 
     msg.text = data.text
 
-    if data.username && data.username != @robot.name
-      msg.as_user = false
+    if data.username
       msg.username = data.username
+      msg.as_user = false
       if data.icon_url?
         msg.icon_url = data.icon_url
       else if data.icon_emoji?
